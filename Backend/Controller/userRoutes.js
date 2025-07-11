@@ -9,6 +9,16 @@ const { auth } = require("../Middelware/auth")
 
 const userRoute=express.Router()
 
+userRoute.get("/all", auth, async (req, res) => {
+    try {
+        const all = await users.find().select("_id name email")
+        res.status(200).send(all)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+  
+})
+
 userRoute.post("/signIn",async(req,res)=>{
     try {
         const {name,email,pass}=req.body

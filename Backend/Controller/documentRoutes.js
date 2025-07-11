@@ -65,6 +65,28 @@ documentRoute.patch("/edit/:id",async (req, res) => {
   }
 });
 
+
+documentRoute.patch("/forward/:id", auth, async (req, res) => {
+  try {
+    const doc = await documents.findById(req.params.id);
+    if (!doc) return res.status(404).send("Document not found");
+    if (doc.author.toString() !== req.userData._id.toString()) {
+      return res.status(403).send("You are not allowed to share this document");
+    }
+    const { sharedWith } = req.body;
+
+    const updatedSharedWith = Array.from(new Set([...doc.sharedWith.map(id => id.toString()), ...sharedWith]));
+
+    doc.sharedWith = updatedSharedWith;
+
+    await doc.save();
+    res.status(200).send("Document shared successfully");
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 documentRoute.get("/search", async (req, res) => {
   try {
     const { q } = req.query;

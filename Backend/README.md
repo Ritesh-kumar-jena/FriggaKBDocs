@@ -80,6 +80,7 @@ Server will run on `http://localhost:<PORT>`.
 | Method | Endpoint            | Description                |
 | ------ | ------------------- | -------------------------- |
 | GET    | `/`                 | Test route (Welcome)       |
+| GET    | `/all`              | Get all users              |
 | POST   | `/users/signIn`     | Register new user          |
 | POST   | `/users/login`      | Login user & get JWT token |
 | GET    | `/documents/public` | Get all public documents   |
@@ -97,7 +98,8 @@ Header format: `Authorization: Bearer <token>`
 | DELETE | `/users/delete/:id`    | Delete user account               |
 | POST   | `/documents/create`    | Create a new document             |
 | GET    | `/documents`           | Get documents user can access     |
-| Patch    | `/documents/edit/:id`  | Edit a document (if author)       |
+| Patch    | `/documents/edit/:id`  | Edit a document (if author)     |
+| Patch    | `/documents/forward/:id`  | Share a document (if author) |
 | GET    | `/documents/search?q=` | Search documents (title/content)  |
 
 ---
