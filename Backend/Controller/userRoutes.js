@@ -50,7 +50,7 @@ userRoute.post("/login",async(req,res)=>{
         if(user){   
            bcrypt.compare(pass,user.pass,function(err,result){
             if(result){
-                const token=jwt.sign({id:user.id},process.env.key,{expiresIn:"1d"})
+                const token=jwt.sign({id:user.id,name:user.name},process.env.key,{expiresIn:"1d"})
                 res.status(201).send({msg:`Welcome ${user.name}`,token:token})
             }
             else{
