@@ -5,7 +5,7 @@
 
   ## Demo Users
 
-  | Email            | password        |
+| Email              | password        |
 |--------------------|-----------------|
 | `jena@gmail.com`   | `kumar`         |
 | `bitesh@gmail.com` | `kumar`         |
