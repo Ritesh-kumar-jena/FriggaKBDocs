@@ -9,6 +9,8 @@ import MyDocuments from "../pages/MyDocuments";
 import SearchPage from "../pages/SearchPage";
 import ProfilePage from "../pages/ProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
+import ForwardDocument from "../pages/ForwardDocument";
+
 
 function AllRoutes() {
   return (
@@ -19,10 +21,11 @@ function AllRoutes() {
         <Route path="/signup" element={<SignupPage/>}/>
         <Route path="/mydocuments" element={<MyDocuments/>}/>
         <Route path="/createdocument" element={<CreateDocument/>}/>
-        <Route path="/editdocument" element={<EditDocument/>}/>
+        <Route path="/editdocument/:id" element={<EditDocument/>}/>
         <Route path="/searchpage" element={<SearchPage/>}/>
         <Route path="/profilepage" element={<ProfilePage/>}/>
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/forward/:id" element={<ForwardDocument />} />
       </Routes>
     </>
   );

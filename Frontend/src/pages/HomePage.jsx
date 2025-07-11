@@ -40,7 +40,7 @@ function HomePage() {
       ) : (
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
           {docs.map((doc) => (
-            <Card key={doc._id} borderWidth="1px" borderRadius="lg" p={4}>
+            <Card key={doc._id} borderWidth="1px" borderRadius="lg" p={4} boxShadow="sm" _hover={{ boxShadow: "lg" }}>
               <CardHeader>
                 <Heading size="md">{doc.title}</Heading>
                 <Text fontSize="sm" color="gray.500">

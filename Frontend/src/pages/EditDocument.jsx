@@ -56,7 +56,7 @@ function EditDocument() {
 
   const handleUpdate = async () => {
     try {
-      await api.put(`/documents/edit/${id}`, form);
+      await api.patch(`/documents/edit/${id}`, form);
       toast({
         title: "Document Updated",
         status: "success",
