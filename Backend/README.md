@@ -97,7 +97,7 @@ Header format: `Authorization: Bearer <token>`
 | DELETE | `/users/delete/:id`    | Delete user account               |
 | POST   | `/documents/create`    | Create a new document             |
 | GET    | `/documents`           | Get documents user can access     |
-| PUT    | `/documents/edit/:id`  | Edit a document (if author)       |
+| Patch    | `/documents/edit/:id`  | Edit a document (if author)       |
 | GET    | `/documents/search?q=` | Search documents (title/content)  |
 
 ---

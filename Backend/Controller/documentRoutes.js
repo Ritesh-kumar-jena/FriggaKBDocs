@@ -50,7 +50,7 @@ documentRoute.get("/", async (req, res) => {
   }
 });
 
-documentRoute.put("/edit/:id",async (req, res) => {
+documentRoute.patch("/edit/:id",async (req, res) => {
   try {
     const { id } = req.params;
     const doc = await documents.findById(id);
