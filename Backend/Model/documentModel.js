@@ -6,7 +6,7 @@ const documentSchema = mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   visibility: { type: String, enum: ["public", "private"], default: "private" },
   sharedWith: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }]
-}, { timestamps: true });
+}, { timestamps: true,versionKey:false });
 
 const documents = mongoose.model("document", documentSchema);
 
